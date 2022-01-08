@@ -1,9 +1,11 @@
 import React from 'react';
+import {UserContextProvider} from "./context/UserContext";
+import AppRouter from "./AppRouter";
 
 function App() {
-  return <div>
-
-  </div>
+  return <UserContextProvider>
+    <AppRouter/>
+  </UserContextProvider>
 }
 
 export default App;
