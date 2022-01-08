@@ -3,6 +3,7 @@ import LoginPage from "./components/LoginPage/LoginPage";
 import {useContext, useEffect} from "react";
 import {UserContext} from "./context/UserContext";
 import axios from "axios";
+import HomePage from "./components/HomePage/HomePage";
 
 export default function AppRouter() {
     const [user, setUser] = useContext(UserContext)
@@ -18,7 +19,7 @@ export default function AppRouter() {
         {
             user ?
                 <Routes>
-                    <Route path="/home" element={<div>Home</div>}/>
+                    <Route path="/home" element={<HomePage/>}/>
                     <Route path="*" element={<Navigate to="/home"/>}/>
                 </Routes> :
                 <Routes>
