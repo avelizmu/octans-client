@@ -24,8 +24,56 @@
     background: #ccc;
 }
 
+.tags {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 3px;
+    align-items: center;
+}
+
+.tag {
+    border: 1px solid black;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    height: fit-content;
+    margin-right: 5px;
+}
+
+.tagContent {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.deleteButton {
+    width: 25px;
+    background: #e85b5b;
+    color: white;
+    border: none;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    cursor: pointer;
+}
+
 .searchBar {
     height: 25px;
+}
+
+.tagSuggestions {
+    display: flex;
+    flex-direction: column;
+    background: #f1f1f1;
+}
+
+.tagSuggestion {
+    padding: 5px;
+    cursor: pointer;
+}
+
+.tagSuggestion:hover {
+    background: #ddd;
 }
 
 .searchResults {
