@@ -2,6 +2,7 @@ import {useState, useEffect} from 'react';
 import {Navigate} from "react-router-dom";
 import styles from "./HomePage.module.css";
 import axios from "axios";
+import playArrow from "./play_arrow_black_24dp.svg"
 
 type Media =  {
     id: number,
@@ -130,10 +131,18 @@ export default function HomePage() {
         <div className={styles.searchResults}>
             {
                 media.map(media =>
-                        <div>
-                            {
-                                media.id
-                            } |
+                        <div key={media.hash} className={styles.result}>
+                            <div className={styles.thumbnailContainer}>
+                                <img className={styles.thumbnail} src={`/api/media/download/${media.hash}/true`}/>
+                                {
+                                    media.mediaType.startsWith('video') ?
+                                        <div className={styles.playIcon}>
+                                            <img src={playArrow}/>
+                                        </div> :
+                                        <></>
+                                }
+                            </div>
+
                         </div>
                 )
             }

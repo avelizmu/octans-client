@@ -77,5 +77,42 @@
 }
 
 .searchResults {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
 
+.result {
+    height: fit-content;
+    width: fit-content;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #e6eaff;
+    cursor: pointer;
+}
+
+.thumbnailContainer {
+    position: relative;
+    margin-bottom: -4px;
+}
+
+.thumbnail {
+
+}
+
+.playIcon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
