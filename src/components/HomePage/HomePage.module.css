@@ -95,6 +95,11 @@
     overflow: hidden;
     background: #e6eaff;
     cursor: pointer;
+    box-shadow: 1px 1px 9px 2px #000000;
+}
+
+.result:hover {
+    box-shadow: 1px 1px 9px 3px #000000;
 }
 
 .thumbnailContainer {
