@@ -30,6 +30,7 @@ export default function HomePage() {
     const [tags, setTags] = useState<Tag[]>([]);
     const [suggestedTags, setSuggestedTags] = useState<Tag[]>([]);
     const [search, setSearch] = useState('');
+    const [navigateToMedia, setNavigateToMedia] = useState('');
 
     useEffect(() => {
         if(search === '') {
@@ -56,6 +57,10 @@ export default function HomePage() {
                 setMedia(data);
             })
     }, [tags])
+
+    if(navigateToMedia) {
+        return <Navigate to={`/media/${navigateToMedia}`}/>
+    }
 
     if(tabs[selectedTab] === 'Upload') {
         return <Navigate to={'/upload'}/>
@@ -131,7 +136,7 @@ export default function HomePage() {
         <div className={styles.searchResults}>
             {
                 media.map(media =>
-                        <div key={media.hash} className={styles.result}>
+                        <div key={media.hash} className={styles.result} onClick={() => setNavigateToMedia(media.hash)}>
                             <div className={styles.thumbnailContainer}>
                                 <img className={styles.thumbnail} src={`/api/media/download/${media.hash}/true`}/>
                                 {
